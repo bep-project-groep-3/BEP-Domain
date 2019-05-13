@@ -1,0 +1,12 @@
+#gitignore
+
+#Java IDE stuff
+
+.classpath
+.project
+
+.settings/
+/target
+/bin
+
+.idea
