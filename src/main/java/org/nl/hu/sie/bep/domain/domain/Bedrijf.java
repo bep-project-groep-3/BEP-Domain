@@ -13,7 +13,7 @@ public class Bedrijf {
 	private String BTWNummer;
 	private String IBAN;
 	private String BIC;
-	private List<Klant> Klanten;
+	private List<Klant> klanten;
 	
 	public Bedrijf(String bedrijfsnaam, String straat, String huisnummer, String postcode, String plaats,
 			String bTWNummer, String iBAN, String bIC) {
@@ -60,11 +60,11 @@ public class Bedrijf {
 	}
 
 	public List<Klant> getKlanten() {
-		return Klanten;
+		return klanten;
 	}
 
 	public void setKlanten(List<Klant> klanten) {
-		Klanten = klanten;
+		this.klanten = klanten;
 	}
 	
 	
