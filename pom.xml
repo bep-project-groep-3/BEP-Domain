@@ -88,14 +88,14 @@
 	</dependency>
   </dependencies>
   
-  <distributionManagement>
-		<repository>
-			<id>packagecloud-AtillaBosma</id>
-			<url>packagecloud+https://packagecloud.io/AtillaBosma/backendprogramming</url>
-		</repository>
-		<snapshotRepository>
-			<id>packagecloud-AtillaBosma</id>
-			<url>packagecloud+https://packagecloud.io/AtillaBosma/backendprogramming</url>
-		</snapshotRepository>
-	</distributionManagement>
+<distributionManagement>
+  <repository>
+    <id>packagecloud-martinj98</id>
+    <url>packagecloud+https://packagecloud.io/martinj98/Bep-domain</url>
+  </repository>
+  <snapshotRepository>
+    <id>packagecloud-martinj98</id>
+    <url>packagecloud+https://packagecloud.io/martinj98/Bep-domain</url>
+  </snapshotRepository>
+</distributionManagement>
 </project>
