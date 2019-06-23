@@ -1,5 +1,6 @@
 package org.nl.hu.sie.bep.domain.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Factuur {
 
 	private int klantID;
 	private int PersoonID;
-	private List<FactuurRegel> regels;
+	private List<FactuurRegel> regels= new ArrayList<>();
 
 	public Factuur(Date datumtijd, int nummer, String opmerking, int klantID, int persoonID) {
 		super();

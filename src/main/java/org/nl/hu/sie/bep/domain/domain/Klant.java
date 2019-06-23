@@ -1,5 +1,6 @@
 package org.nl.hu.sie.bep.domain.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Klant {
@@ -12,9 +13,9 @@ public class Klant {
 	private String giro;
 	private String BIC;
 	
-	private List<Adres> adressen;
-	private List<Persoon> contactPersonen;
-	private List<Factuur> facturen;
+	private List<Adres> adressen = new ArrayList<>();
+	private List<Persoon> contactPersonen = new ArrayList<>();
+	private List<Factuur> facturen = new ArrayList<>();
 
 	public Klant(int iD, String naam, String rechtsvorm, String btwnummer, String bankRek, String giro, String bIC) {
 		super();

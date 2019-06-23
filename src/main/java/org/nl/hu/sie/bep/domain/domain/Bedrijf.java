@@ -1,5 +1,6 @@
 package org.nl.hu.sie.bep.domain.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //Er is nu nog maar 1 bedrijf, Bifi waarvan de data niet in de db staat.
@@ -13,7 +14,7 @@ public class Bedrijf {
 	private String BTWNummer;
 	private String IBAN;
 	private String BIC;
-	private List<Klant> klanten;
+	private List<Klant> klanten= new ArrayList<>();
 	
 	public Bedrijf(String bedrijfsnaam, String straat, String huisnummer, String postcode, String plaats,
 			String bTWNummer, String iBAN, String bIC) {
