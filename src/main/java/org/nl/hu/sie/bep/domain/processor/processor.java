@@ -10,7 +10,7 @@ import org.nl.hu.sie.bep.domain.domain.*;
 public class processor {
 	private Bedrijf Bifi=new Bedrijf("Bifi b.v","Pietweg","1","1234AB","Amsterdam","12345","Rabo1234","135");
 	
-	public Bedrijf proces(List<Data> data) {
+	public Bedrijf process(List<Data> data) {
 		ArrayList<Klant> klanten= new ArrayList<Klant>();
 		for (Data dataLine : data) {
 

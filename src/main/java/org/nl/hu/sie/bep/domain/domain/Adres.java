@@ -23,6 +23,35 @@ public class Adres {
 		this.klantID = klantID;
 	}
 
+	public String getStraat() {
+		return straat;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public String getHuisnummer() {
+		return huisnummer;
+	}
+
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public String getPlaats() {
+		return plaats;
+	}
+
+	public String getBIC() {
+		return BIC;
+	}
+
+	public int getKlantID() {
+		return klantID;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

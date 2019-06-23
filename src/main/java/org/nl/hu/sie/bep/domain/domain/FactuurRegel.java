@@ -22,6 +22,31 @@ public class FactuurRegel {
 		this.eenheid = eenheid;
 	}
 
+	public int getProductID() {
+		return productID;
+	}
+
+	public String getProductnaam() {
+		return productnaam;
+	}
+
+	public double getHoeveelheid() {
+		return hoeveelheid;
+	}
+
+	public double getTotaalprijs() {
+		return totaalprijs;
+	}
+
+
+	public String getBTWCode() {
+		return BTWCode;
+	}
+
+	public String getEenheid() {
+		return eenheid;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

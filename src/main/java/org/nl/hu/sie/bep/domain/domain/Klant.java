@@ -30,6 +30,31 @@ public class Klant {
 	public int getID() {
 		return ID;
 	}
+	
+
+	public String getNaam() {
+		return naam;
+	}
+
+	public String getRechtsvorm() {
+		return rechtsvorm;
+	}
+
+	public String getBtwnummer() {
+		return btwnummer;
+	}
+
+	public String getBankRek() {
+		return bankRek;
+	}
+
+	public String getGiro() {
+		return giro;
+	}
+
+	public String getBIC() {
+		return BIC;
+	}
 
 	public List<Adres> getAdressen() {
 		return adressen;

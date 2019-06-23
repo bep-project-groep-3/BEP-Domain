@@ -22,6 +22,26 @@ public class Factuur {
 		this.klantID = klantID;
 		PersoonID = persoonID;
 	}
+	
+	public Date getDatumtijd() {
+		return datumtijd;
+	}
+	
+	public int getNummer() {
+		return nummer;
+	}
+
+	public String getOpmerking() {
+		return opmerking;
+	}
+
+	public int getKlantID() {
+		return klantID;
+	}
+
+	public int getPersoonID() {
+		return PersoonID;
+	}
 
 	public List<FactuurRegel> getRegels() {
 		return regels;

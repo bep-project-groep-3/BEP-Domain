@@ -30,6 +30,36 @@ public class Data {
     public String note;
     public List<Document> invoiceLines;
     
+    
+    
+	public Data(String straat, String type, String huisnummer, String postcode, String plaats, String bIC, int klantID,
+			int persoonID, String bedrijfsnaam, String rechtsvorm, String vAT, String bankRek, String giro, String bik,
+			String voornaam, String tussenvoegsel, String achternaam, String telefoon, String fax, String geslacht,
+			String note, List<Document> invoiceLines) {
+		super();
+		Straat = straat;
+		Type = type;
+		Huisnummer = huisnummer;
+		this.postcode = postcode;
+		this.plaats = plaats;
+		BIC = bIC;
+		KlantID = klantID;
+		PersoonID = persoonID;
+		Bedrijfsnaam = bedrijfsnaam;
+		Rechtsvorm = rechtsvorm;
+		VAT = vAT;
+		BankRek = bankRek;
+		Giro = giro;
+		Bik = bik;
+		Voornaam = voornaam;
+		Tussenvoegsel = tussenvoegsel;
+		Achternaam = achternaam;
+		Telefoon = telefoon;
+		Fax = fax;
+		Geslacht = geslacht;
+		this.note = note;
+		this.invoiceLines = invoiceLines;
+	}
 	public String getStraat() {
 		return Straat;
 	}

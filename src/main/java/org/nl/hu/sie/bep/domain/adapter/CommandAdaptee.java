@@ -16,7 +16,7 @@ public class CommandAdaptee {
 	
     public void createIEFFilesFromMonthNumber(int month) {
     	List<Data> data=loadAdapter.getDataFromMonthNumber(month);
-    	Bedrijf bedrijfObject=proccesor.proces(data);
+    	Bedrijf bedrijfObject=proccesor.process(data);
     	IEFGenerator.createIEFFilesFromObject(bedrijfObject);
     }
     

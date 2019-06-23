@@ -25,6 +25,38 @@ public class Persoon {
 		this.klantID = klantID;
 	}
 
+	public int getID() {
+		return ID;
+	}
+
+	public String getVoornaam() {
+		return voornaam;
+	}
+
+	public String getTussenvoegsel() {
+		return tussenvoegsel;
+	}
+
+	public String getAchternaam() {
+		return achternaam;
+	}
+
+	public String getTelefoon() {
+		return telefoon;
+	}
+
+	public String getFax() {
+		return fax;
+	}
+
+	public String getGeslacht() {
+		return geslacht;
+	}
+
+	public int getKlantID() {
+		return klantID;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
