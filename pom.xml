@@ -88,6 +88,16 @@
       <enabled>true</enabled>
     </snapshots>
   </repository>
+  <repository>
+    <id>dmytros2-BEP-Loader</id>
+    <url>https://packagecloud.io/dmytros2/BEP-Loader/maven2</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
 </repositories>
   
   <dependencies>
@@ -124,6 +134,11 @@
 		  <groupId>org.nl.hu.sie.bep.iefgenerator</groupId>
 		  <artifactId>iefgenerator</artifactId>
 		  <version>1.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.nl.hu.sie.bep.loader</groupId>
+		  <artifactId>loader</artifactId>
+		  <version>1.0-SNAPSHOT</version>
 		</dependency>
   </dependencies>
   

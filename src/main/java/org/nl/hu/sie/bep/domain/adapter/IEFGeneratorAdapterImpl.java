@@ -5,7 +5,7 @@ import org.nl.hu.sie.bep.dto.Row;
 import org.nl.hu.sie.bep.adapter.IEFGenerator;
 import org.nl.hu.sie.bep.adapter.IEFGeneratorAdapter;
 
-public class IEFGeneratorImpl implements IEFGeneratorAdapter {
+public class IEFGeneratorAdapterImpl implements IEFGeneratorAdapter {
 
 	@Override
 	public Row generate(int month, Bedrijf bedrijfObject) {

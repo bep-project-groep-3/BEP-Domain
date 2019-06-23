@@ -7,22 +7,22 @@ import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.nl.hu.sie.bep.domain.domain.Bedrijf;
-import org.nl.hu.sie.bep.domain.processor.Data;
+import org.nl.hu.sie.bep.loader.models.Data;
 import org.nl.hu.sie.bep.domain.processor.processor;
 
 public class TestProcessor {
 	
-	private processor processor;
+	private static processor processor;
+	private static Bedrijf bedrijf;
 	
-	@Test
-	public void testproccesorBedrijf(){
-		processor= new processor();
+	@BeforeAll
+	public static void setUp() {
+	processor= new processor();
 		
 		List<Data> dataList=new ArrayList<Data>();
 		List<Document> lines= new ArrayList<>();
-		
 		Document line = new Document();
 		line.append("productId", 3);
 		line.append("productName", "apple");
@@ -34,13 +34,34 @@ public class TestProcessor {
 		
 		Data d = new Data("straat","type", "huisnummer", "postcode",
 			"plaats", "BIC", 1, 2, "bedrijfsnaam", "rechtsvorm", "VAT", "bankrek", "giro", "BIK", "voornaam", "tussenvoegsel", 
-			"achternaam", "telefoon","fax", "geslacht", "note",lines,new Date(),3.0);
+			"achternaam", "telefoon","fax", "geslacht", "note");
+		
+		Date date=new Date();
+		double invoiceID=3.0;
+		
+		d.setInvoiceLines(lines);
+		d.setDate(date);
+		d.setInvoiceID(invoiceID);
+
 		dataList.add(d);
 		
-		Bedrijf b=processor.process(dataList);
-		assertEquals(1,b.getKlanten().get(0).getID());
-		assertEquals(2,b.getKlanten().get(0).getContactPersonen().get(0).getID());
-		assertEquals("HIGH",b.getKlanten().get(0).getFacturen().get(0).getRegels().get(0).getBTWCode());
-		assertEquals(3,b.getKlanten().get(0).getFacturen().get(0).getNummer());
+		bedrijf=processor.process(dataList);
+	}
+	
+	@Test
+	public void testproccesorBedrijfKlantID(){
+		assertEquals(1,bedrijf.getKlanten().get(0).getID());
+	}
+	@Test
+	public void testproccesorBedrijfKlantPersoonID(){
+		assertEquals(2,bedrijf.getKlanten().get(0).getContactPersonen().get(0).getID());
+	}
+	@Test
+	public void testproccesorBedrijfKlantFactuurRegelBtwCode(){
+		assertEquals("HIGH",bedrijf.getKlanten().get(0).getFacturen().get(0).getRegels().get(0).getBTWCode());
+	}
+	@Test
+	public void testproccesorBedrijfKlantFactuurNummer(){
+		assertEquals(3,bedrijf.getKlanten().get(0).getFacturen().get(0).getNummer());
 	}
 }

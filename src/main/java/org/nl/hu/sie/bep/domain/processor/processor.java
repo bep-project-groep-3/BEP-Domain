@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.bson.Document;
 import org.nl.hu.sie.bep.domain.domain.*;
+import org.nl.hu.sie.bep.loader.models.Data;
 
 public class processor {
 	private Bedrijf Bifi=new Bedrijf("Bifi b.v","Pietweg","1","1234AB","Amsterdam","12345","Rabo1234","135");
