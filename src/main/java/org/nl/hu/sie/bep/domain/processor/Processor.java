@@ -8,8 +8,8 @@ import org.bson.Document;
 import org.nl.hu.sie.bep.domain.domain.*;
 import org.nl.hu.sie.bep.loader.models.Data;
 
-public class processor {
-	private Bedrijf Bifi=new Bedrijf("Bifi b.v","Pietweg","1","1234AB","Amsterdam","12345","Rabo1234","135");
+public class Processor {
+	private Bedrijf bifi=new Bedrijf("Bifi b.v","Pietweg","1","1234AB","Amsterdam","12345","Rabo1234","135");
 	
 	public Bedrijf process(List<Data> data) {
 		ArrayList<Klant> klanten= new ArrayList<Klant>();
@@ -49,12 +49,10 @@ public class processor {
 			   }
 			}
 		}
-		Bifi.setKlanten(klanten);
+		bifi.setKlanten(klanten);
 
-		return Bifi;
+		return bifi;
 	}
-
-
 
 	private Klant createKlant(Data dataLine) {
 		int klantID=dataLine.getKlantID();
@@ -64,8 +62,7 @@ public class processor {
 		String bankRek= dataLine.getBankRek();
 		String giro= dataLine.getGiro();
 		String BIK= dataLine.getBik();
-		Klant klant= new Klant(klantID,bedrijfsnaam,rechtsvorm,btwnummer,bankRek,giro,BIK);
-		return klant;
+		return new Klant(klantID,bedrijfsnaam,rechtsvorm,btwnummer,bankRek,giro,BIK);
 	}
 	private Adres createAdres(Data dataLine) {
 		String Straat= dataLine.getStraat(); 
@@ -75,8 +72,7 @@ public class processor {
 		String plaats= dataLine.getPlaats(); 
 		String BIC= dataLine.getBIC(); 
 		int klantID=dataLine.getKlantID();
-		Adres adres= new Adres(Straat, type, huisnummer, postcode, plaats, BIC, klantID);
-		return adres;
+		return new Adres(Straat, type, huisnummer, postcode, plaats, BIC, klantID);
 	}
 	private Persoon createPersoon(Data dataLine) {
 
@@ -88,8 +84,7 @@ public class processor {
 		String fax= dataLine.getFax();
 		String geslacht= dataLine.getGeslacht();
 		int klantID=dataLine.getKlantID();
-		Persoon persoon=new Persoon(PersoonID, voornaam, tussenvoegsel, achternaam, telefoon, fax, geslacht, klantID);
-		return persoon;
+		return new Persoon(PersoonID, voornaam, tussenvoegsel, achternaam, telefoon, fax, geslacht, klantID);
 	}
 	private Factuur createFactuur(Data dataLine) {
 		Date datum= dataLine.getDate();	
@@ -97,11 +92,9 @@ public class processor {
 		String opmerking= dataLine.getNote();
 		int klantID=dataLine.getKlantID();
 		int PersoonID = dataLine.getPersoonID();
-		Factuur factuur= new Factuur(datum,nummer,opmerking,klantID,PersoonID);
-		return factuur;
+		return new Factuur(datum,nummer,opmerking,klantID,PersoonID);
 	}
 	private List<FactuurRegel> createFactuurRegels(Data dataLine) {
-		List<Document> regels=dataLine.getInvoiceLines();
 		ArrayList<FactuurRegel> factuurRegels= new ArrayList<FactuurRegel>();
 		for (Document regel :dataLine.getInvoiceLines()) {
 			int productID=regel.getInteger("productId");
