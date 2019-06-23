@@ -41,5 +41,6 @@ public class TestProcessor {
 		assertEquals(1,b.getKlanten().get(0).getID());
 		assertEquals(2,b.getKlanten().get(0).getContactPersonen().get(0).getID());
 		assertEquals("HIGH",b.getKlanten().get(0).getFacturen().get(0).getRegels().get(0).getBTWCode());
+		assertEquals(3,b.getKlanten().get(0).getFacturen().get(0).getNummer());
 	}
 }
