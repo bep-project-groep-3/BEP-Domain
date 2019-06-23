@@ -7,8 +7,6 @@ import org.nl.hu.sie.bep.loader.models.Data;
 import org.nl.hu.sie.bep.domain.processor.processor;
 
 public class CommandAdapterImpl implements CommandAdapter{
-   //domainAdapter.createIEFFilesFromMonthNumber(12);
-	//TODO create adapter impls
 	private LoadAdapterImpl loadAdapter= new LoadAdapterImpl();
 	private IEFGeneratorAdapterImpl IEFGenerator= new IEFGeneratorAdapterImpl();
 	
