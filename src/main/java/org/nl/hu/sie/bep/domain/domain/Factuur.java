@@ -7,8 +7,8 @@ import java.util.List;
 public class Factuur {
 
 	//private int ID;
-	private Date datumtijd;//TODO onbtreekt in loader
-	private int nummer; //TODO onbtreekt in loader
+	private Date datumtijd;
+	private int nummer; 
 	private String opmerking;
 
 	private int klantID;

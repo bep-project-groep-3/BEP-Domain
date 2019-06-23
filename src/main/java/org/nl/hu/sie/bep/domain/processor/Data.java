@@ -29,13 +29,16 @@ public class Data {
     public String Geslacht;
     public String note;
     public List<Document> invoiceLines;
+    public java.util.Date Date;
+    public double InvoiceID;
     
     
     
+	
 	public Data(String straat, String type, String huisnummer, String postcode, String plaats, String bIC, int klantID,
 			int persoonID, String bedrijfsnaam, String rechtsvorm, String vAT, String bankRek, String giro, String bik,
 			String voornaam, String tussenvoegsel, String achternaam, String telefoon, String fax, String geslacht,
-			String note, List<Document> invoiceLines) {
+			String note, List<Document> invoiceLines, java.util.Date date, double invoiceID) {
 		super();
 		Straat = straat;
 		Type = type;
@@ -59,7 +62,10 @@ public class Data {
 		Geslacht = geslacht;
 		this.note = note;
 		this.invoiceLines = invoiceLines;
+		Date = date;
+		InvoiceID = invoiceID;
 	}
+	
 	public String getStraat() {
 		return Straat;
 	}
@@ -126,8 +132,11 @@ public class Data {
 	public List<Document> getInvoiceLines() {
 		return invoiceLines;
 	}
-    
-    
-    
+	public java.util.Date getDate() {
+		return Date;
+	}
+	public double getInvoiceID() {
+		return InvoiceID;
+	}  
     
 }

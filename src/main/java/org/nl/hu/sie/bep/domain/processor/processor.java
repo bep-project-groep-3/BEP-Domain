@@ -91,8 +91,8 @@ public class processor {
 		return persoon;
 	}
 	private Factuur createFactuur(Data dataLine) {
-		Date datum= new Date();	//TODO LOADER
-		int nummer = 12345; 	//TODO LOADER 
+		Date datum= dataLine.getDate();	
+		int nummer =  (int) dataLine.getInvoiceID();
 		String opmerking= dataLine.getNote();
 		int klantID=dataLine.getKlantID();
 		int PersoonID = dataLine.getPersoonID();

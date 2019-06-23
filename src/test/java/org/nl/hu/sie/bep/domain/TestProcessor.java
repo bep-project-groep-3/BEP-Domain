@@ -3,6 +3,7 @@ package org.nl.hu.sie.bep.domain;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.bson.Document;
@@ -29,11 +30,11 @@ public class TestProcessor {
 		line.append("totalPrice", 20.0);
 		line.append("btwCode", "HIGH");
 		line.append("unit", "kg");
-		
 		lines.add(line);
 		
 		Data d = new Data("straat","type", "huisnummer", "postcode",
-			"plaats", "BIC", 1, 2, "bedrijfsnaam", "rechtsvorm", "VAT", "bankrek", "giro", "BIK", "voornaam", "tussenvoegsel", "achternaam", "telefoon","fax", "geslacht", "note",lines);
+			"plaats", "BIC", 1, 2, "bedrijfsnaam", "rechtsvorm", "VAT", "bankrek", "giro", "BIK", "voornaam", "tussenvoegsel", 
+			"achternaam", "telefoon","fax", "geslacht", "note",lines,new Date(),3.0);
 		dataList.add(d);
 		
 		Bedrijf b=processor.process(dataList);
