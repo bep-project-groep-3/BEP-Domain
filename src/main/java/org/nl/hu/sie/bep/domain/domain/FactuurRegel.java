@@ -2,7 +2,7 @@ package org.nl.hu.sie.bep.domain.domain;
 
 public class FactuurRegel {
 	
-	private int ID;
+	//private int ID;
 	private int productID;
 	private String productnaam;
 	private double hoeveelheid;

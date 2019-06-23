@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Factuur {
 
-	private int ID;
+	//private int ID;
 	private Date datumtijd;
-	private int nummer;
+	//private int nummer; //TODO onbtreekt in loader
 	private String opmerking;
 	
 	private int klantID;
