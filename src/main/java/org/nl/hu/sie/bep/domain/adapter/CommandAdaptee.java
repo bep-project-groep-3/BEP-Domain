@@ -15,7 +15,6 @@ public class CommandAdaptee {
 	private processor proccesor;
 	
     public void createIEFFilesFromMonthNumber(int month) {
-    	//TODO lijst van dataobjecten per factuur?? adresnummer?? hoe deze eruitziet is belangrijk voor processor
     	List<Data> data=loadAdapter.getDataFromMonthNumber(month);
     	Bedrijf bedrijfObject=proccesor.proces(data);
     	IEFGenerator.createIEFFilesFromObject(bedrijfObject);
