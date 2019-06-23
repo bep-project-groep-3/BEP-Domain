@@ -1,16 +1,16 @@
 package org.nl.hu.sie.bep.domain.domain;
 
 public class FactuurRegel {
-	
-	//private int ID;
+
+	// private int ID;
 	private int productID;
 	private String productnaam;
 	private double hoeveelheid;
 	private double totaalprijs;
 	private String BTWCode;
 	private String eenheid;
-	//private int FactuurID;
-	
+	// private int FactuurID;
+
 	public FactuurRegel(int productID, String productnaam, double hoeveelheid, double totaalprijs, String bTWCode,
 			String eenheid) {
 		super();
@@ -26,25 +26,48 @@ public class FactuurRegel {
 		return productID;
 	}
 
+	public void setProductID(int productID) {
+		this.productID = productID;
+	}
+
 	public String getProductnaam() {
 		return productnaam;
+	}
+
+	public void setProductnaam(String productnaam) {
+		this.productnaam = productnaam;
 	}
 
 	public double getHoeveelheid() {
 		return hoeveelheid;
 	}
 
+	public void setHoeveelheid(double hoeveelheid) {
+		this.hoeveelheid = hoeveelheid;
+	}
+
 	public double getTotaalprijs() {
 		return totaalprijs;
 	}
 
+	public void setTotaalprijs(double totaalprijs) {
+		this.totaalprijs = totaalprijs;
+	}
 
 	public String getBTWCode() {
 		return BTWCode;
 	}
 
+	public void setBTWCode(String bTWCode) {
+		BTWCode = bTWCode;
+	}
+
 	public String getEenheid() {
 		return eenheid;
+	}
+
+	public void setEenheid(String eenheid) {
+		this.eenheid = eenheid;
 	}
 
 	@Override
@@ -79,7 +102,5 @@ public class FactuurRegel {
 			return false;
 		return true;
 	}
-	
-	
 
 }

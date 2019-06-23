@@ -6,14 +6,14 @@ import java.util.List;
 
 public class Factuur {
 
-	//private int ID;
+	// private int ID;
 	private Date datumtijd;
-	private int nummer; 
+	private int nummer;
 	private String opmerking;
 
 	private int klantID;
 	private int PersoonID;
-	private List<FactuurRegel> regels= new ArrayList<>();
+	private List<FactuurRegel> regels = new ArrayList<>();
 
 	public Factuur(Date datumtijd, int nummer, String opmerking, int klantID, int persoonID) {
 		super();
@@ -23,25 +23,45 @@ public class Factuur {
 		this.klantID = klantID;
 		PersoonID = persoonID;
 	}
-	
+
 	public Date getDatumtijd() {
 		return datumtijd;
 	}
-	
+
+	public void setDatumtijd(Date datumtijd) {
+		this.datumtijd = datumtijd;
+	}
+
 	public int getNummer() {
 		return nummer;
+	}
+
+	public void setNummer(int nummer) {
+		this.nummer = nummer;
 	}
 
 	public String getOpmerking() {
 		return opmerking;
 	}
 
+	public void setOpmerking(String opmerking) {
+		this.opmerking = opmerking;
+	}
+
 	public int getKlantID() {
 		return klantID;
 	}
 
+	public void setKlantID(int klantID) {
+		this.klantID = klantID;
+	}
+
 	public int getPersoonID() {
 		return PersoonID;
+	}
+
+	public void setPersoonID(int persoonID) {
+		PersoonID = persoonID;
 	}
 
 	public List<FactuurRegel> getRegels() {
@@ -84,7 +104,5 @@ public class Factuur {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }
