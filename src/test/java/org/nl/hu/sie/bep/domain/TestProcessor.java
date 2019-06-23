@@ -10,16 +10,16 @@ import org.bson.Document;
 import org.junit.jupiter.api.*;
 import org.nl.hu.sie.bep.domain.domain.Bedrijf;
 import org.nl.hu.sie.bep.loader.models.Data;
-import org.nl.hu.sie.bep.domain.processor.processor;
+import org.nl.hu.sie.bep.domain.processor.Processor;
 
 public class TestProcessor {
 	
-	private static processor processor;
+	private static Processor processor;
 	private static Bedrijf bedrijf;
 	
 	@BeforeAll
 	public static void setUp() {
-	processor= new processor();
+	processor= new Processor();
 		
 		List<Data> dataList=new ArrayList<Data>();
 		List<Document> lines= new ArrayList<>();
