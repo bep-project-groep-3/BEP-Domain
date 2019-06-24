@@ -1,6 +1,7 @@
 package org.nl.hu.sie.bep.domain.processor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -16,42 +17,51 @@ public class Processor {
 		for (Data dataLine : data) {
 
 			Klant klant =createKlant(dataLine);
-			Adres adres = createAdres(dataLine);
-			Persoon persoon=createPersoon(dataLine);
-			Factuur factuur= createFactuur(dataLine);
-			List<FactuurRegel>factuurRegels=createFactuurRegels(dataLine);
-			factuur.setRegels(factuurRegels);
 			//add klant if not already in list
 			if (!klanten.contains(klant)) {
 				klanten.add(klant);
 			}
-			//Add adres,persoon,factuur to klant if not already
-			for(Klant k : klanten) { 
-			   if(k.getId()== dataLine.getKlantID()) { 
-				   List<Adres>adressen=k.getAdressen();
-				   if (!adressen.contains(adres)){
-					   ArrayList<Adres> newAdressen= (ArrayList<Adres>) adressen;
-					   newAdressen.add(adres);
-					   k.setAdressen(newAdressen);
-				   }
-				   List<Persoon>personen=k.getContactPersonen();
-				   if (!personen.contains(persoon)){
-					   ArrayList<Persoon> newPersonen= (ArrayList<Persoon>) personen;
-					   newPersonen.add(persoon);
-					   k.setContactPersonen(newPersonen);
-				   }
-				   List<Factuur>facturen=k.getFacturen();
-				   if (!facturen.contains(factuur)){
-					   ArrayList<Factuur> newFacturen= (ArrayList<Factuur>) facturen;
-					   newFacturen.add(factuur);
-					   k.setFacturen(newFacturen);
-				   }
+			Klant[] klantArray = (Klant[]) klanten.toArray();
+			Klant k=Arrays.stream(klantArray)
+            .filter(lambdaKlant -> lambdaKlant.getId()==dataLine.getKlantID() )
+            .findFirst()
+            .orElse(null);
+			
+			if (k != null) {
+				k=addListstoKlant(k,dataLine);
 			   }
 			}
-		}
 		bifi.setKlanten(klanten);
 
 		return bifi;
+	}
+
+	private Klant addListstoKlant(Klant k,Data dataLine) {
+		Adres adres = createAdres(dataLine);
+		Persoon persoon=createPersoon(dataLine);
+		Factuur factuur= createFactuur(dataLine);
+		List<FactuurRegel>factuurRegels=createFactuurRegels(dataLine);
+		factuur.setRegels(factuurRegels);
+		   List<Adres>adressen=k.getAdressen();
+		   if (!adressen.contains(adres)){
+			   ArrayList<Adres> newAdressen= (ArrayList<Adres>) adressen;
+			   newAdressen.add(adres);
+			   k.setAdressen(newAdressen);
+		   }
+		   List<Persoon>personen=k.getContactPersonen();
+		   if (!personen.contains(persoon)){
+			   ArrayList<Persoon> newPersonen= (ArrayList<Persoon>) personen;
+			   newPersonen.add(persoon);
+			   k.setContactPersonen(newPersonen);
+		   }
+		   List<Factuur>facturen=k.getFacturen();
+		   if (!facturen.contains(factuur)){
+			   ArrayList<Factuur> newFacturen= (ArrayList<Factuur>) facturen;
+			   newFacturen.add(factuur);
+			   k.setFacturen(newFacturen);
+		   }
+		   return k;
+		
 	}
 
 	private Klant createKlant(Data dataLine) {
