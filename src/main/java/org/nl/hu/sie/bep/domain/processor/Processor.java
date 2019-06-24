@@ -9,7 +9,16 @@ import org.nl.hu.sie.bep.domain.domain.*;
 import org.nl.hu.sie.bep.loader.models.Data;
 
 public class Processor {
-	private Bedrijf bifi=new Bedrijf("Bifi b.v","Pietweg","1","1234AB","Amsterdam","12345","Rabo1234","135");
+	private Bedrijf bifi = new Bedrijf.Builder()
+			.setBedrijfsnaam("Bifi b.v")
+			.setStraat("Pietweg")
+			.setHuisnummer("1")
+			.setPostcode("1234AB")
+			.setPlaats("Amsterdam")
+			.setBtwNummer("12345")
+			.setIban("Rabo1234")
+			.setBic("123")
+	        .build();
 	
 	public Bedrijf process(List<Data> data) {
 		ArrayList<Klant> klanten= new ArrayList<Klant>();
