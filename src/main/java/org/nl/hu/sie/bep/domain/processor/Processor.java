@@ -21,8 +21,8 @@ public class Processor {
 				klanten.add(klant);
 			}
 			for(Klant k : klanten) { 
-				   if(k.getId()== dataLine.getKlantID()) { 
-				k=addListstoKlant(k,dataLine);
+			   if(k.getId()== dataLine.getKlantID()) { 
+				   addListstoKlant(k,dataLine);
 			   }
 			}
 		}
