@@ -50,15 +50,15 @@ public class TestProcessor {
 	
 	@Test
 	public void testproccesorBedrijfKlantID(){
-		assertEquals(1,bedrijf.getKlanten().get(0).getID());
+		assertEquals(1,bedrijf.getKlanten().get(0).getId());
 	}
 	@Test
 	public void testproccesorBedrijfKlantPersoonID(){
-		assertEquals(2,bedrijf.getKlanten().get(0).getContactPersonen().get(0).getID());
+		assertEquals(2,bedrijf.getKlanten().get(0).getContactPersonen().get(0).getId());
 	}
 	@Test
 	public void testproccesorBedrijfKlantFactuurRegelBtwCode(){
-		assertEquals("HIGH",bedrijf.getKlanten().get(0).getFacturen().get(0).getRegels().get(0).getBTWCode());
+		assertEquals("HIGH",bedrijf.getKlanten().get(0).getFacturen().get(0).getRegels().get(0).getBtwCode());
 	}
 	@Test
 	public void testproccesorBedrijfKlantFactuurNummer(){

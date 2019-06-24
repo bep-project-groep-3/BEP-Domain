@@ -8,14 +8,14 @@ import org.nl.hu.sie.bep.domain.processor.Processor;
 
 public class CommandAdapterImpl implements CommandAdapter{
 	private LoadAdapterImpl loadAdapter= new LoadAdapterImpl();
-	private IEFGeneratorAdapterImpl IEFGenerator= new IEFGeneratorAdapterImpl();
+	private IEFGeneratorAdapterImpl IefGenerator= new IEFGeneratorAdapterImpl();
 	
 	private Processor proccesor;
 	@Override
     public void createIEFFilesFromMonthNumber(int month) {
     	List<Data> data=loadAdapter.returnDataFromMonth(month);
     	Bedrijf bedrijfObject=proccesor.process(data);
-    	IEFGenerator.generate(month,bedrijfObject);
+    	IefGenerator.generate(month,bedrijfObject);
     }
     
 }

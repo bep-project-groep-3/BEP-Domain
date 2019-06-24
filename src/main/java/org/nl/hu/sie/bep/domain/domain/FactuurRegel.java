@@ -2,23 +2,21 @@ package org.nl.hu.sie.bep.domain.domain;
 
 public class FactuurRegel {
 
-	// private int ID;
 	private int productID;
 	private String productnaam;
 	private double hoeveelheid;
 	private double totaalprijs;
-	private String BTWCode;
+	private String btwCode;
 	private String eenheid;
-	// private int FactuurID;
 
-	public FactuurRegel(int productID, String productnaam, double hoeveelheid, double totaalprijs, String bTWCode,
+	public FactuurRegel(int productID, String productnaam, double hoeveelheid, double totaalprijs, String btwCode,
 			String eenheid) {
 		super();
 		this.productID = productID;
 		this.productnaam = productnaam;
 		this.hoeveelheid = hoeveelheid;
 		this.totaalprijs = totaalprijs;
-		BTWCode = bTWCode;
+		this.btwCode = btwCode;
 		this.eenheid = eenheid;
 	}
 
@@ -54,12 +52,12 @@ public class FactuurRegel {
 		this.totaalprijs = totaalprijs;
 	}
 
-	public String getBTWCode() {
-		return BTWCode;
+	public String getBtwCode() {
+		return btwCode;
 	}
 
-	public void setBTWCode(String bTWCode) {
-		BTWCode = bTWCode;
+	public void setBtwCode(String btwCode) {
+		this.btwCode = btwCode;
 	}
 
 	public String getEenheid() {
@@ -79,10 +77,10 @@ public class FactuurRegel {
 		if (getClass() != obj.getClass())
 			return false;
 		FactuurRegel other = (FactuurRegel) obj;
-		if (BTWCode == null) {
-			if (other.BTWCode != null)
+		if (btwCode == null) {
+			if (other.btwCode != null)
 				return false;
-		} else if (!BTWCode.equals(other.BTWCode))
+		} else if (!btwCode.equals(other.btwCode))
 			return false;
 		if (eenheid == null) {
 			if (other.eenheid != null)

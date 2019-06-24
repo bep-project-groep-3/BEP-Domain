@@ -27,7 +27,7 @@ public class Processor {
 			}
 			//Add adres,persoon,factuur to klant if not already
 			for(Klant k : klanten) { 
-			   if(k.getID()== dataLine.getKlantID()) { 
+			   if(k.getId()== dataLine.getKlantID()) { 
 				   List<Adres>adressen=k.getAdressen();
 				   if (!adressen.contains(adres)){
 					   ArrayList<Adres> newAdressen= (ArrayList<Adres>) adressen;

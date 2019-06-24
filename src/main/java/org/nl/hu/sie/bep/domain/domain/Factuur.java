@@ -6,22 +6,21 @@ import java.util.List;
 
 public class Factuur {
 
-	// private int ID;
 	private Date datumtijd;
 	private int nummer;
 	private String opmerking;
 
-	private int klantID;
-	private int PersoonID;
+	private int klantId;
+	private int persoonId;
 	private List<FactuurRegel> regels = new ArrayList<>();
 
-	public Factuur(Date datumtijd, int nummer, String opmerking, int klantID, int persoonID) {
+	public Factuur(Date datumtijd, int nummer, String opmerking, int klantId, int persoonId) {
 		super();
 		this.datumtijd = datumtijd;
 		this.nummer = nummer;
 		this.opmerking = opmerking;
-		this.klantID = klantID;
-		PersoonID = persoonID;
+		this.klantId = klantId;
+		this.persoonId = persoonId;
 	}
 
 	public Date getDatumtijd() {
@@ -48,20 +47,20 @@ public class Factuur {
 		this.opmerking = opmerking;
 	}
 
-	public int getKlantID() {
-		return klantID;
+	public int getKlantId() {
+		return klantId;
 	}
 
-	public void setKlantID(int klantID) {
-		this.klantID = klantID;
+	public void setKlantId(int klantId) {
+		this.klantId = klantId;
 	}
 
-	public int getPersoonID() {
-		return PersoonID;
+	public int getPersoonId() {
+		return persoonId;
 	}
 
-	public void setPersoonID(int persoonID) {
-		PersoonID = persoonID;
+	public void setPersoonId(int persoonId) {
+		this.persoonId = persoonId;
 	}
 
 	public List<FactuurRegel> getRegels() {
@@ -81,14 +80,14 @@ public class Factuur {
 		if (getClass() != obj.getClass())
 			return false;
 		Factuur other = (Factuur) obj;
-		if (PersoonID != other.PersoonID)
+		if (persoonId != other.persoonId)
 			return false;
 		if (datumtijd == null) {
 			if (other.datumtijd != null)
 				return false;
 		} else if (!datumtijd.equals(other.datumtijd))
 			return false;
-		if (klantID != other.klantID)
+		if (klantId != other.klantId)
 			return false;
 		if (nummer != other.nummer)
 			return false;

@@ -5,35 +5,35 @@ import java.util.List;
 
 public class Klant {
 
-	private int ID;
+	private int id;
 	private String naam;
 	private String rechtsvorm;
 	private String btwnummer;
 	private String bankRek;
 	private String giro;
-	private String BIC;
+	private String bic;
 
 	private List<Adres> adressen = new ArrayList<>();
 	private List<Persoon> contactPersonen = new ArrayList<>();
 	private List<Factuur> facturen = new ArrayList<>();
 
-	public Klant(int iD, String naam, String rechtsvorm, String btwnummer, String bankRek, String giro, String bIC) {
+	public Klant(int id, String naam, String rechtsvorm, String btwnummer, String bankRek, String giro, String bic) {
 		super();
-		ID = iD;
+		this.id = id;
 		this.naam = naam;
 		this.rechtsvorm = rechtsvorm;
 		this.btwnummer = btwnummer;
 		this.bankRek = bankRek;
 		this.giro = giro;
-		BIC = bIC;
+		this.bic = bic;
 	}
 
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getNaam() {
@@ -76,12 +76,12 @@ public class Klant {
 		this.giro = giro;
 	}
 
-	public String getBIC() {
-		return BIC;
+	public String getBic() {
+		return bic;
 	}
 
-	public void setBIC(String bIC) {
-		BIC = bIC;
+	public void setBIC(String bic) {
+		this.bic = bic;
 	}
 
 	public List<Adres> getAdressen() {
@@ -117,7 +117,7 @@ public class Klant {
 		if (getClass() != obj.getClass())
 			return false;
 		Klant other = (Klant) obj;
-		if (ID != other.ID)
+		if (id != other.id)
 			return false;
 		return true;
 	}

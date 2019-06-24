@@ -2,7 +2,7 @@ package org.nl.hu.sie.bep.domain.domain;
 
 public class Persoon {
 
-	private int ID;
+	private int id;
 	private String voornaam;
 	private String tussenvoegsel;
 	private String achternaam;
@@ -10,27 +10,27 @@ public class Persoon {
 	private String fax;
 	private String geslacht;
 
-	private int klantID;
+	private int klantId;
 
-	public Persoon(int iD, String voornaam, String tussenvoegsel, String achternaam, String telefoon, String fax,
-			String geslacht, int klantID) {
+	public Persoon(int id, String voornaam, String tussenvoegsel, String achternaam, String telefoon, String fax,
+			String geslacht, int klantId) {
 		super();
-		ID = iD;
+		this.id = id;
 		this.voornaam = voornaam;
 		this.tussenvoegsel = tussenvoegsel;
 		this.achternaam = achternaam;
 		this.telefoon = telefoon;
 		this.fax = fax;
 		this.geslacht = geslacht;
-		this.klantID = klantID;
+		this.klantId = klantId;
 	}
 
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getVoornaam() {
@@ -81,12 +81,12 @@ public class Persoon {
 		this.geslacht = geslacht;
 	}
 
-	public int getKlantID() {
-		return klantID;
+	public int getKlantId() {
+		return klantId;
 	}
 
-	public void setKlantID(int klantID) {
-		this.klantID = klantID;
+	public void setKlantId(int klantId) {
+		this.klantId = klantId;
 	}
 
 	@Override
@@ -98,7 +98,7 @@ public class Persoon {
 		if (getClass() != obj.getClass())
 			return false;
 		Persoon other = (Persoon) obj;
-		if (ID != other.ID)
+		if (id != other.id)
 			return false;
 		return true;
 	}

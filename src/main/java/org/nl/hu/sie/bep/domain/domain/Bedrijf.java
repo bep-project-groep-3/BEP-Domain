@@ -11,21 +11,21 @@ public class Bedrijf {
 	private String huisnummer;
 	private String postcode;
 	private String plaats;
-	private String BTWNummer;
-	private String IBAN;
-	private String BIC;
+	private String btwNummer;
+	private String iban;
+	private String bic;
 	private List<Klant> klanten = new ArrayList<>();
 
 	public Bedrijf(String bedrijfsnaam, String straat, String huisnummer, String postcode, String plaats,
-			String bTWNummer, String iBAN, String bIC) {
+			String btwNummer, String iban, String bic) {
 		this.bedrijfsnaam = bedrijfsnaam;
 		this.straat = straat;
 		this.huisnummer = huisnummer;
 		this.postcode = postcode;
 		this.plaats = plaats;
-		BTWNummer = bTWNummer;
-		IBAN = iBAN;
-		BIC = bIC;
+		this.btwNummer = btwNummer;
+		this.iban = iban;
+		this.bic = bic;
 	}
 
 	public String getBedrijfsnaam() {
@@ -68,28 +68,28 @@ public class Bedrijf {
 		this.plaats = plaats;
 	}
 
-	public String getBTWNummer() {
-		return BTWNummer;
+	public String getBtwNummer() {
+		return btwNummer;
 	}
 
-	public void setBTWNummer(String bTWNummer) {
-		BTWNummer = bTWNummer;
+	public void setBtwNummer(String bTWNummer) {
+		this.btwNummer = bTWNummer;
 	}
 
-	public String getIBAN() {
-		return IBAN;
+	public String getIban() {
+		return iban;
 	}
 
-	public void setIBAN(String iBAN) {
-		IBAN = iBAN;
+	public void setIban(String iban) {
+		this.iban = iban;
 	}
 
-	public String getBIC() {
-		return BIC;
+	public String getBic() {
+		return bic;
 	}
 
-	public void setBIC(String bIC) {
-		BIC = bIC;
+	public void setBic(String bic) {
+		this.bic = bic;
 	}
 
 	public List<Klant> getKlanten() {
