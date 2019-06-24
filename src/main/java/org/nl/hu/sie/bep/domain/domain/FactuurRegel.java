@@ -1,5 +1,7 @@
 package org.nl.hu.sie.bep.domain.domain;
 
+import java.util.Objects;
+
 public class FactuurRegel {
 
 	private int productID;
@@ -70,35 +72,19 @@ public class FactuurRegel {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof FactuurRegel)) {
 			return false;
+		}
 		FactuurRegel other = (FactuurRegel) obj;
-		if (btwCode == null) {
-			if (other.btwCode != null)
-				return false;
-		} else if (!btwCode.equals(other.btwCode))
-			return false;
-		if (eenheid == null) {
-			if (other.eenheid != null)
-				return false;
-		} else if (!eenheid.equals(other.eenheid))
-			return false;
-		if (Double.doubleToLongBits(hoeveelheid) != Double.doubleToLongBits(other.hoeveelheid))
-			return false;
-		if (productID != other.productID)
-			return false;
-		if (productnaam == null) {
-			if (other.productnaam != null)
-				return false;
-		} else if (!productnaam.equals(other.productnaam))
-			return false;
-		if (Double.doubleToLongBits(totaalprijs) != Double.doubleToLongBits(other.totaalprijs))
-			return false;
-		return true;
+		return Objects.equals(btwCode, other.btwCode) && Objects.equals(eenheid, other.eenheid)
+				&& Double.doubleToLongBits(hoeveelheid) == Double.doubleToLongBits(other.hoeveelheid)
+				&& productID == other.productID && Objects.equals(productnaam, other.productnaam)
+				&& Double.doubleToLongBits(totaalprijs) == Double.doubleToLongBits(other.totaalprijs);
 	}
-
 }

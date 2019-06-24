@@ -1,5 +1,7 @@
 package org.nl.hu.sie.bep.domain.domain;
 
+import java.util.Objects;
+
 public class Adres {
 
 	private String straat;
@@ -81,46 +83,19 @@ public class Adres {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof Adres)) {
 			return false;
+		}
 		Adres other = (Adres) obj;
-		if (bic == null) {
-			if (other.bic != null)
-				return false;
-		} else if (!bic.equals(other.bic))
-			return false;
-		if (huisnummer == null) {
-			if (other.huisnummer != null)
-				return false;
-		} else if (!huisnummer.equals(other.huisnummer))
-			return false;
-		if (klantID != other.klantID)
-			return false;
-		if (plaats == null) {
-			if (other.plaats != null)
-				return false;
-		} else if (!plaats.equals(other.plaats))
-			return false;
-		if (postcode == null) {
-			if (other.postcode != null)
-				return false;
-		} else if (!postcode.equals(other.postcode))
-			return false;
-		if (straat == null) {
-			if (other.straat != null)
-				return false;
-		} else if (!straat.equals(other.straat))
-			return false;
-		if (type == null) {
-			if (other.type != null)
-				return false;
-		} else if (!type.equals(other.type))
-			return false;
-		return true;
+		return Objects.equals(bic, other.bic) && Objects.equals(huisnummer, other.huisnummer)
+				&& klantID == other.klantID && Objects.equals(plaats, other.plaats)
+				&& Objects.equals(postcode, other.postcode) && Objects.equals(straat, other.straat)
+				&& Objects.equals(type, other.type);
 	}
-
 }

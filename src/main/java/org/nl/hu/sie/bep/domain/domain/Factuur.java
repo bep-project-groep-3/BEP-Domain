@@ -73,17 +73,16 @@ public class Factuur {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (!(obj instanceof Factuur)) {
 			return false;
+		}
 		Factuur other = (Factuur) obj;
-		if (nummer != other.nummer)
-			return false;
-		return true;
+		return nummer == other.nummer;
 	}
-	
-
 }
