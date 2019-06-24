@@ -71,6 +71,11 @@ public class FactuurRegel {
 	}
 
 	@Override
+	public int hashCode() {
+		return Objects.hash(btwCode, eenheid, hoeveelheid, productID, productnaam, totaalprijs);
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

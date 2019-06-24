@@ -64,4 +64,5 @@ public class TestProcessor {
 	public void testproccesorBedrijfKlantFactuurNummer(){
 		assertEquals(3,bedrijf.getKlanten().get(0).getFacturen().get(0).getNummer());
 	}
+	
 }

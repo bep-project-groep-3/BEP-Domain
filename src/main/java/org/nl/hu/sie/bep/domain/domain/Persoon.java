@@ -1,5 +1,7 @@
 package org.nl.hu.sie.bep.domain.domain;
 
+import java.util.Objects;
+
 public class Persoon {
 
 	private int id;
@@ -87,6 +89,11 @@ public class Persoon {
 
 	public void setKlantId(int klantId) {
 		this.klantId = klantId;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 
 	@Override

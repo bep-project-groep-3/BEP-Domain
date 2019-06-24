@@ -3,6 +3,7 @@ package org.nl.hu.sie.bep.domain.domain;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 public class Factuur {
 
@@ -69,6 +70,11 @@ public class Factuur {
 
 	public void setRegels(List<FactuurRegel> regels) {
 		this.regels = regels;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nummer);
 	}
 
 	@Override

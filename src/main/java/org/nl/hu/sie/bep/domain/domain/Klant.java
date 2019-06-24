@@ -2,6 +2,7 @@ package org.nl.hu.sie.bep.domain.domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Klant {
 
@@ -106,6 +107,11 @@ public class Klant {
 
 	public void setFacturen(List<Factuur> facturen) {
 		this.facturen = facturen;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 
 	@Override

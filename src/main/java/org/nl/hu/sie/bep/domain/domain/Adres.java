@@ -82,6 +82,11 @@ public class Adres {
 	}
 
 	@Override
+	public int hashCode() {
+		return Objects.hash(bic, huisnummer, klantID, plaats, postcode, straat, type);
+	}
+
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
