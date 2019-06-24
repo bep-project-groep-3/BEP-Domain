@@ -55,55 +55,55 @@ public class Processor {
 	}
 
 	private Klant createKlant(Data dataLine) {
-		int klantID=dataLine.getKlantID();
+		int klantId=dataLine.getKlantID();
 		String bedrijfsnaam= dataLine.getBedrijfsnaam();
 		String rechtsvorm= dataLine.getRechtsvorm();
 		String btwnummer= dataLine.getVAT();
 		String bankRek= dataLine.getBankRek();
 		String giro= dataLine.getGiro();
-		String BIK= dataLine.getBik();
-		return new Klant(klantID,bedrijfsnaam,rechtsvorm,btwnummer,bankRek,giro,BIK);
+		String bik= dataLine.getBik();
+		return new Klant(klantId,bedrijfsnaam,rechtsvorm,btwnummer,bankRek,giro,bik);
 	}
 	private Adres createAdres(Data dataLine) {
-		String Straat= dataLine.getStraat(); 
+		String straat= dataLine.getStraat(); 
 		String type= dataLine.getType(); 
 		String huisnummer= dataLine.getHuisnummer(); 
 		String postcode= dataLine.getPostcode(); 
 		String plaats= dataLine.getPlaats(); 
-		String BIC= dataLine.getBIC(); 
-		int klantID=dataLine.getKlantID();
-		return new Adres(Straat, type, huisnummer, postcode, plaats, BIC, klantID);
+		String bic= dataLine.getBIC(); 
+		int klantId=dataLine.getKlantID();
+		return new Adres(straat, type, huisnummer, postcode, plaats, bic, klantId);
 	}
 	private Persoon createPersoon(Data dataLine) {
 
-		int PersoonID = dataLine.getPersoonID();
+		int persoonId = dataLine.getPersoonID();
 		String voornaam= dataLine.getVoornaam();
 		String tussenvoegsel= dataLine.getTussenvoegsel();
 		String achternaam= dataLine.getAchternaam();
 		String telefoon= dataLine.getTelefoon();
 		String fax= dataLine.getFax();
 		String geslacht= dataLine.getGeslacht();
-		int klantID=dataLine.getKlantID();
-		return new Persoon(PersoonID, voornaam, tussenvoegsel, achternaam, telefoon, fax, geslacht, klantID);
+		int klantId=dataLine.getKlantID();
+		return new Persoon(persoonId, voornaam, tussenvoegsel, achternaam, telefoon, fax, geslacht, klantId);
 	}
 	private Factuur createFactuur(Data dataLine) {
 		Date datum= dataLine.getDate();	
 		int nummer =  (int) dataLine.getInvoiceID();
 		String opmerking= dataLine.getNote();
-		int klantID=dataLine.getKlantID();
-		int PersoonID = dataLine.getPersoonID();
-		return new Factuur(datum,nummer,opmerking,klantID,PersoonID);
+		int klantId=dataLine.getKlantID();
+		int persoonId = dataLine.getPersoonID();
+		return new Factuur(datum,nummer,opmerking,klantId,persoonId);
 	}
 	private List<FactuurRegel> createFactuurRegels(Data dataLine) {
 		ArrayList<FactuurRegel> factuurRegels= new ArrayList<FactuurRegel>();
 		for (Document regel :dataLine.getInvoiceLines()) {
-			int productID=regel.getInteger("productId");
+			int productId=regel.getInteger("productId");
 			String productnaam=regel.getString("productName");
 			double hoeveelheid=regel.getDouble("quantity");
 			double totaalprijs=regel.getDouble("totalPrice");
-			String BTWCode=regel.getString("btwCode");
+			String btwCode=regel.getString("btwCode");
 			String eenheid=regel.getString("unit");
-			FactuurRegel factuurRegel= new FactuurRegel(productID,productnaam,hoeveelheid,totaalprijs,BTWCode,eenheid);
+			FactuurRegel factuurRegel= new FactuurRegel(productId,productnaam,hoeveelheid,totaalprijs,btwCode,eenheid);
 			factuurRegels.add(factuurRegel);
 		}
 		return factuurRegels;

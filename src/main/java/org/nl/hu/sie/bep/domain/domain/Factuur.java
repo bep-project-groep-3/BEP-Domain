@@ -80,28 +80,10 @@ public class Factuur {
 		if (getClass() != obj.getClass())
 			return false;
 		Factuur other = (Factuur) obj;
-		if (persoonId != other.persoonId)
-			return false;
-		if (datumtijd == null) {
-			if (other.datumtijd != null)
-				return false;
-		} else if (!datumtijd.equals(other.datumtijd))
-			return false;
-		if (klantId != other.klantId)
-			return false;
 		if (nummer != other.nummer)
-			return false;
-		if (opmerking == null) {
-			if (other.opmerking != null)
-				return false;
-		} else if (!opmerking.equals(other.opmerking))
-			return false;
-		if (regels == null) {
-			if (other.regels != null)
-				return false;
-		} else if (!regels.equals(other.regels))
 			return false;
 		return true;
 	}
+	
 
 }
