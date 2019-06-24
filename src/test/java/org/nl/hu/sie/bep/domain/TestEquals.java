@@ -10,8 +10,12 @@ import org.nl.hu.sie.bep.domain.domain.Persoon;
 public class TestEquals {
 	@Test 
 	public void testEqualsPersoon() {
-		Persoon p= new Persoon(1, "1", "1", "1", "1", "1", "1", 1);
-		Persoon p2= new Persoon(1, "1", "1", "1", "1", "1", "1", 1);
+		Persoon p= new Persoon.Builder()
+				.setId(1)
+				.build();		
+		Persoon p2= new Persoon.Builder()
+				.setId(1)
+				.build();		
 		assertEquals(p,p2);
 	};
 	@Test

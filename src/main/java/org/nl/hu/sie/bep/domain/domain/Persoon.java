@@ -4,6 +4,71 @@ import java.util.Objects;
 
 public class Persoon {
 
+	public static class Builder {
+		private int id;
+		private String voornaam;
+		private String tussenvoegsel;
+		private String achternaam;
+		private String telefoon;
+		private String fax;
+		private String geslacht;
+		private int klantId;
+
+		public Builder setId(int id) {
+			this.id = id;
+			return this;
+		}
+
+		public Builder setVoornaam(String voornaam) {
+			this.voornaam = voornaam;
+			return this;
+		}
+
+		public Builder setTussenvoegsel(String tussenvoegsel) {
+			this.tussenvoegsel = tussenvoegsel;
+			return this;
+		}
+
+		public Builder setAchternaam(String achternaam) {
+			this.achternaam = achternaam;
+			return this;
+		}
+
+		public Builder setTelefoon(String telefoon) {
+			this.telefoon = telefoon;
+			return this;
+		}
+
+		public Builder setFax(String fax) {
+			this.fax = fax;
+			return this;
+		}
+
+		public Builder setGeslacht(String geslacht) {
+			this.geslacht = geslacht;
+			return this;
+		}
+
+		public Builder setKlantId(int klantId) {
+			this.klantId = klantId;
+			return this;
+		}
+
+		public Persoon build() {
+			Persoon p = new Persoon();
+			p.id = id;
+			p.voornaam = voornaam;
+			p.tussenvoegsel = tussenvoegsel;
+			p.achternaam = achternaam;
+			p.telefoon = telefoon;
+			p.fax = fax;
+			p.geslacht = geslacht;
+			p.klantId = klantId;
+			return p;
+		}
+
+	}
+
 	private int id;
 	private String voornaam;
 	private String tussenvoegsel;
@@ -14,17 +79,7 @@ public class Persoon {
 
 	private int klantId;
 
-	public Persoon(int id, String voornaam, String tussenvoegsel, String achternaam, String telefoon, String fax,
-			String geslacht, int klantId) {
-		super();
-		this.id = id;
-		this.voornaam = voornaam;
-		this.tussenvoegsel = tussenvoegsel;
-		this.achternaam = achternaam;
-		this.telefoon = telefoon;
-		this.fax = fax;
-		this.geslacht = geslacht;
-		this.klantId = klantId;
+	private Persoon() {
 	}
 
 	public int getId() {

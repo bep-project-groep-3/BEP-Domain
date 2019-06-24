@@ -98,7 +98,16 @@ public class Processor {
 		String fax= dataLine.getFax();
 		String geslacht= dataLine.getGeslacht();
 		int klantId=dataLine.getKlantID();
-		return new Persoon(persoonId, voornaam, tussenvoegsel, achternaam, telefoon, fax, geslacht, klantId);
+		return new Persoon.Builder()
+				.setId(persoonId)
+				.setVoornaam(voornaam)
+				.setTussenvoegsel(tussenvoegsel)
+				.setAchternaam(achternaam)
+				.setTelefoon(telefoon)
+				.setFax(fax)
+				.setGeslacht(geslacht)
+				.setKlantId(klantId)
+				.build();
 	}
 	private Factuur createFactuur(Data dataLine) {
 		Date datum= dataLine.getDate();	
