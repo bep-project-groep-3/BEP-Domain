@@ -1,7 +1,6 @@
 package org.nl.hu.sie.bep.domain.processor;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -21,16 +20,12 @@ public class Processor {
 			if (!klanten.contains(klant)) {
 				klanten.add(klant);
 			}
-			Klant[] klantArray = (Klant[]) klanten.toArray();
-			Klant k=Arrays.stream(klantArray)
-            .filter(lambdaKlant -> lambdaKlant.getId()==dataLine.getKlantID() )
-            .findFirst()
-            .orElse(null);
-			
-			if (k != null) {
+			for(Klant k : klanten) { 
+				   if(k.getId()== dataLine.getKlantID()) { 
 				k=addListstoKlant(k,dataLine);
 			   }
 			}
+		}
 		bifi.setKlanten(klanten);
 
 		return bifi;
