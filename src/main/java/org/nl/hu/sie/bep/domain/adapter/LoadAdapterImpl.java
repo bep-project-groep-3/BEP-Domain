@@ -1,6 +1,7 @@
 package org.nl.hu.sie.bep.domain.adapter;
 
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 
 import org.nl.hu.sie.bep.loader.adapter.DatabaseAdapter;
@@ -19,11 +20,9 @@ public class LoadAdapterImpl implements Adapter {
 		try {
 			return databaseadadapter.returnDataFromMonth(month);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 			logger.error("something went wrong trying to load the data", e);
 		}
-		return null;
+		 return Collections.emptyList();
 	}
 	
 
