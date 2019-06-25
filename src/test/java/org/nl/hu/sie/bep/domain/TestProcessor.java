@@ -13,19 +13,30 @@ import org.nl.hu.sie.bep.loader.models.Data;
 import org.nl.hu.sie.bep.domain.processor.Processor;
 
 public class TestProcessor {
-	
+
 	private static Processor processor;
 	private static Bedrijf bedrijf;
-	
+
 	@BeforeAll
 	public static void setUp() {
-	processor= new Processor();
-		
-		List<Data> dataList=new ArrayList<Data>();
-		List<Document> lines= new ArrayList<>();
-		
-		int klantId=1;
-		int persoonId=2;
+		processor = new Processor();
+
+		List<Data> dataList = new ArrayList<Data>();
+		Data d1=getNewDataObject();
+		Data d2=getNewDataObject();
+		d2.setKlantID(101);
+		d2.setPersoonID(102);
+		d2.setInvoiceID(103);
+		dataList.add(d1);
+		dataList.add(d2);
+		bedrijf = processor.process(dataList);
+	}
+
+	public static Data getNewDataObject() {
+		List<Document> lines = new ArrayList<>();
+
+		int klantId = 1;
+		int persoonId = 2;
 		Document line = new Document();
 		line.append("productId", 3.0);
 		line.append("productName", "apple");
@@ -34,39 +45,38 @@ public class TestProcessor {
 		line.append("btwCode", "HIGH");
 		line.append("unit", "kg");
 		lines.add(line);
-		
-		Data d = new Data("straat","type", "huisnummer", "postcode",
-			"plaats", "BIC", klantId, persoonId, "bedrijfsnaam", "rechtsvorm", "VAT", "bankrek", "giro", "BIK", "voornaam", "tussenvoegsel", 
-			"achternaam", "telefoon","fax", "geslacht", "note");
-		
-		Date date=new Date();
-		double invoiceID=3.0;
-		
+
+		Data d = new Data("straat", "type", "huisnummer", "postcode", "plaats", "BIC", klantId, persoonId,
+				"bedrijfsnaam", "rechtsvorm", "VAT", "bankrek", "giro", "BIK", "voornaam", "tussenvoegsel",
+				"achternaam", "telefoon", "fax", "geslacht", "note");
+
+		Date date = new Date();
+		double invoiceID = 3.0;
+
 		d.setInvoiceLines(lines);
 		d.setDate(date);
 		d.setInvoiceID(invoiceID);
+		return d;
+	}
 
-		dataList.add(d);
-		dataList.add(d);
-		
-		bedrijf=processor.process(dataList);
-	}
-	
 	@Test
-	public void testproccesorBedrijfKlantId(){
-		assertEquals(1,bedrijf.getKlanten().get(0).getId());
+	public void testproccesorBedrijfKlantId() {
+		assertEquals(1, bedrijf.getKlanten().get(0).getId());
 	}
+
 	@Test
-	public void testproccesorBedrijfKlantPersoonId(){
-		assertEquals(2,bedrijf.getKlanten().get(0).getContactPersonen().get(0).getId());
+	public void testproccesorBedrijfKlantPersoonId() {
+		assertEquals(2, bedrijf.getKlanten().get(0).getContactPersonen().get(0).getId());
 	}
+
 	@Test
-	public void testproccesorBedrijfKlantFactuurRegelBtwCode(){
-		assertEquals("HIGH",bedrijf.getKlanten().get(0).getFacturen().get(0).getRegels().get(0).getBtwCode());
+	public void testproccesorBedrijfKlantFactuurRegelBtwCode() {
+		assertEquals("HIGH", bedrijf.getKlanten().get(0).getFacturen().get(0).getRegels().get(0).getBtwCode());
 	}
+
 	@Test
-	public void testproccesorBedrijfKlantFactuurNummer(){
-		assertEquals(3,bedrijf.getKlanten().get(0).getFacturen().get(0).getNummer());
+	public void testproccesorBedrijfKlantFactuurNummer() {
+		assertEquals(3, bedrijf.getKlanten().get(0).getFacturen().get(0).getNummer());
 	}
-	
+
 }
