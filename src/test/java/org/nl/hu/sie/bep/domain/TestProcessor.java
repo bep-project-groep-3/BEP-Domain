@@ -44,16 +44,17 @@ public class TestProcessor {
 		d.setInvoiceID(invoiceID);
 
 		dataList.add(d);
+		dataList.add(d);
 		
 		bedrijf=processor.process(dataList);
 	}
 	
 	@Test
-	public void testproccesorBedrijfKlantID(){
+	public void testproccesorBedrijfKlantId(){
 		assertEquals(1,bedrijf.getKlanten().get(0).getId());
 	}
 	@Test
-	public void testproccesorBedrijfKlantPersoonID(){
+	public void testproccesorBedrijfKlantPersoonId(){
 		assertEquals(2,bedrijf.getKlanten().get(0).getContactPersonen().get(0).getId());
 	}
 	@Test

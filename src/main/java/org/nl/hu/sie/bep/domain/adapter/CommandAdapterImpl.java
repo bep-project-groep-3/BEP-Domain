@@ -10,7 +10,7 @@ public class CommandAdapterImpl implements CommandAdapter{
 	private LoadAdapterImpl loadAdapter= new LoadAdapterImpl();
 	private IEFGeneratorAdapterImpl iefGenerator= new IEFGeneratorAdapterImpl();
 	
-	private Processor proccesor;
+	private Processor proccesor= new Processor();
 	@Override
     public void createIEFFilesFromMonthNumber(int month) {
     	List<Data> data=loadAdapter.returnDataFromMonth(month);
