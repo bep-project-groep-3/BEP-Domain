@@ -9,7 +9,6 @@ public class TestAdapters {
 	@Test
 	public void testCommandAdapterCreate() {
 		CommandAdapterImpl impl= new CommandAdapterImpl();
-		impl.createIEFFilesFromMonthNumber(1);
 		assertNotNull(impl);
 	}
 }
