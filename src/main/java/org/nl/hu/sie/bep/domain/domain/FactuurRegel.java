@@ -4,14 +4,14 @@ import java.util.Objects;
 
 public class FactuurRegel {
 
-	private int productID;
+	private double productID;
 	private String productnaam;
 	private double hoeveelheid;
 	private double totaalprijs;
 	private String btwCode;
 	private String eenheid;
 
-	public FactuurRegel(int productID, String productnaam, double hoeveelheid, double totaalprijs, String btwCode,
+	public FactuurRegel(double productID, String productnaam, double hoeveelheid, double totaalprijs, String btwCode,
 			String eenheid) {
 		super();
 		this.productID = productID;
@@ -22,7 +22,7 @@ public class FactuurRegel {
 		this.eenheid = eenheid;
 	}
 
-	public int getProductID() {
+	public double getProductID() {
 		return productID;
 	}
 

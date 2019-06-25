@@ -120,7 +120,7 @@ public class Processor {
 	private List<FactuurRegel> createFactuurRegels(Data dataLine) {
 		ArrayList<FactuurRegel> factuurRegels= new ArrayList<FactuurRegel>();
 		for (Document regel :dataLine.getInvoiceLines()) {
-			int productId=regel.getInteger("productId");
+			Double productId=regel.getDouble("productId");
 			String productnaam=regel.getString("productName");
 			double hoeveelheid=regel.getDouble("quantity");
 			double totaalprijs=regel.getDouble("totalPrice");

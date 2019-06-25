@@ -23,8 +23,11 @@ public class TestProcessor {
 		
 		List<Data> dataList=new ArrayList<Data>();
 		List<Document> lines= new ArrayList<>();
+		
+		int klantId=1;
+		int persoonId=2;
 		Document line = new Document();
-		line.append("productId", 3);
+		line.append("productId", 3.0);
 		line.append("productName", "apple");
 		line.append("quantity", 10.0);
 		line.append("totalPrice", 20.0);
@@ -33,7 +36,7 @@ public class TestProcessor {
 		lines.add(line);
 		
 		Data d = new Data("straat","type", "huisnummer", "postcode",
-			"plaats", "BIC", 1, 2, "bedrijfsnaam", "rechtsvorm", "VAT", "bankrek", "giro", "BIK", "voornaam", "tussenvoegsel", 
+			"plaats", "BIC", klantId, persoonId, "bedrijfsnaam", "rechtsvorm", "VAT", "bankrek", "giro", "BIK", "voornaam", "tussenvoegsel", 
 			"achternaam", "telefoon","fax", "geslacht", "note");
 		
 		Date date=new Date();
