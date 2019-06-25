@@ -28,6 +28,7 @@ public class TestProcessor {
 		d2.setPersoonID(102);
 		d2.setInvoiceID(103);
 		dataList.add(d1);
+		dataList.add(d1);
 		dataList.add(d2);
 		bedrijf = processor.process(dataList);
 	}
